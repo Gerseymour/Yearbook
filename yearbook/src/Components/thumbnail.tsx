@@ -4,9 +4,9 @@
 const Thumbnail = () => {
 
   return (
-    {}
-    //rectagangle button
-    // page numbe r
+    <div>
+      hellow 
+    </div>
   )
 }
 
