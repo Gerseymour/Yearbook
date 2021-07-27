@@ -3,8 +3,7 @@
 const Loading = () => {
 
   return (
-    {}
-    //loading gif
+    <img src="/Yearbook_loader.gif" alt='loading'/>
   )
 }
 

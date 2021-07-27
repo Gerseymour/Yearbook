@@ -1,12 +1,14 @@
 
+interface Prop { 
+  id: Number
+}
 
-
-const Thumbnail = () => {
+const Thumbnail = (props:Prop) => {
 
   return (
-    <div>
-      hellow 
-    </div>
+    <button style={{background:'purple', width: '20%',height:'30%', margin:'2%'}} >
+      <p>{props.id}</p>
+    </button>
   )
 }
 
