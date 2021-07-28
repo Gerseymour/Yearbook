@@ -1,4 +1,5 @@
 import Slot from './slot';
+import Loading from './loading'
 
 interface ISlot{
   id:Number;
@@ -21,12 +22,17 @@ interface IProp {
 const Layout = (props:IProp) => { 
   const data:PageAPI = props.data
 
+  console.log(data.title, 'title')
+  if (data.title === undefined) {
+    return <Loading/>
+  }
+
   const slotList = data.slots.map((item) => 
     <Slot height={item.height} width={item.width} top={item.y} left={item.x} id={item.id}/>
   )
 
   return (
-    <div style={{height:`${data.height}mm`, width:`${data.width}mm`, background:'white', position: 'relative'}}>
+    <div style={{height:`${data.height}mm`, width:`${data.width}mm`, background:'white', position: 'relative', borderStyle:'solid'}}>
         {slotList}
     </div>
 

@@ -1,6 +1,6 @@
 import './App.css';
 import Dashboard from './Containers/dashboard';
-import Pages from './Containers/pages'
+import Page from './Containers/pages'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <div className="App"> 
     <Router> 
       <Switch>
-        <Route path="/:id">
-          <Pages/>
+        <Route path="/:page">
+          <Page/>
         </Route>
         <Route path='/'>
           <Dashboard />        
