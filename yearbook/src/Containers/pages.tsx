@@ -45,7 +45,6 @@ const Page = () => {
         setLast(pages[pages.length-1])
         const res = await fetch(`https://ybm-technical-exercise-api.s3.eu-west-1.amazonaws.com/api/pages/${page}`)
         const data = (await res.json()) as PageAPI
-        console.log(data)
         setData(data)
     } catch (e) {
         console.log(e)
@@ -57,13 +56,11 @@ const Page = () => {
   }
   return (
     <div> 
-      <h1>Page {data.title}</h1>
-      <h2>Page {data.id}</h2>
       <Navigation current={data.id} first={first} last={last}/>
+      <h1>{data.title}</h1>
       <Layout data={data} /> 
-    
-     
-     </div> 
+      <h2>Page {data.id}</h2>
+    </div> 
   )
 }
 

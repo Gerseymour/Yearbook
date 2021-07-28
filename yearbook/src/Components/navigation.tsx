@@ -1,4 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
+import '../App.css'
+import { ImFirst, ImLast, ImPrevious2, ImNext2, ImHome } from "react-icons/im";
 
 interface INavigation {
   current:Number;
@@ -16,25 +18,25 @@ const Navigation = (props:INavigation) => {
     console.log(+page,'infunction')
     if (+page === 1) {
       return (
-        <div className='backwardSection' style= {{width:'20%',display:'flex', alignContent: 'center', justifyContent: 'space-evenly'}}>
+        <div className='nav-section' >
           <div >
-            <h3>first</h3>
+            <ImFirst  className='nav-button-disabled'/>
           </div>
           <div>
-            <h3>no prev</h3>
+            <ImPrevious2 className='nav-button-disabled'/>
           </div>
         </div>
       )}
     return ( 
-    <div className='backwardSection' style= {{width:'20%',display:'flex', alignContent: 'center', justifyContent: 'space-evenly'}}>
+    <div className='nav-section' >
     <Link to={`/${props.first}`}>
       <div >
-        <h3>first</h3>
+        <ImFirst  className='nav-button'/>
       </div>
     </Link>
     <Link to={`/${+page-1}`}>
       <div>
-        <h3>prev</h3>
+       <ImPrevious2 className='nav-button'/>
       </div>
     </Link>
   </div>      
@@ -44,25 +46,25 @@ const Navigation = (props:INavigation) => {
   const next = () => {
     if (+page === 10) {
       return (
-        <div className='forwardSection' style= {{width:'20%',display:'flex', alignContent: 'center', justifyContent: 'space-evenly'}}>
+        <div className='nav-section' >
           <div>
-            <h3>no next</h3>
+            <ImNext2  className='nav-button-disabled'/>
           </div>
           <div>
-          <h3>last page</h3>
+            <ImLast  className='nav-button-disabled'/>
           </div>
         </div>
       )}
     return (   
-    <div className='forwardSection' style= {{width:'20%',display:'flex', alignContent: 'center', justifyContent: 'space-evenly'}}>    
+    <div className='nav-section' >    
       <Link to={`/${+page+1}`}>
         <div>
-          <h3>next</h3>
+          <ImNext2  className='nav-button'/>
         </div>
       </Link>
       <Link to={`/${props.last}`}>
         <div>
-          <h3>last</h3>
+          <ImLast  className='nav-button'/>
         </div>
       </Link>
     </div>
@@ -71,11 +73,11 @@ const Navigation = (props:INavigation) => {
 
 
   return (
-    <div style= {{display:'flex', alignContent: 'center', justifyContent: 'space-evenly'}}>
+    <div className='nav-bar'>
       {prev()}
       <Link to='/'>
         <div className='homeSection'>
-          <h3>Home</h3>
+          <ImHome  className='nav-button'/>
         </div>
       </Link>
      {next()} 

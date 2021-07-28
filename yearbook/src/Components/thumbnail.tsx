@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import '../App.css'
+
 interface Prop { 
   id: Number
 }
@@ -6,8 +8,8 @@ interface Prop {
 const Thumbnail = (props:Prop) => {
 
   return (
-    <Link to={`/${props.id}`} style={{background:'purple', width: '20%',height:'30%', margin:'2%'}} >
-      <p>{props.id}</p>
+    <Link to={`/${props.id}`} className='thumbnail' >
+      <p >{props.id}</p>
     </Link>
   )
 }
